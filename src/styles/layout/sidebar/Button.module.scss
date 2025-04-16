@@ -1,0 +1,32 @@
+@use "../../abstracts/variables" as vars;
+
+.button {
+    display: block;
+    height: 45px;
+    width: 100%;
+
+    font-size: 1rem;
+    text-transform: uppercase;
+
+    margin-bottom: .5rem;
+
+    &:hover {
+        background-color: map-get(vars.$bg-color, bg-primary-hover);
+    }
+
+    &.button:last-child {
+        margin-bottom: 0;
+    }
+
+    &.upload {
+        text-transform: capitalize;
+        color: map-get(vars.$text-colors, color-accent);
+        border: none;
+        margin-bottom: 0;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+

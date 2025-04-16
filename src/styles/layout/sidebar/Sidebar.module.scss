@@ -1,0 +1,76 @@
+@use "../../abstracts/mixins.css" as mix;
+@use "../../abstracts/variables" as vars;
+
+.sidebar {
+    @include mix.display-flex(stretch, stretch, column);
+    width: clamp(100px, 100%, 310px);
+    height: 100vh;
+    border-right: 1px solid map-get(vars.$borders, contour-primary);
+    padding: 1rem;
+}
+
+.logoContainer {
+    @include mix.display-flex(stretch, center);
+    gap: .5em;
+}
+
+hr {
+    border: none;
+    border-bottom: 1px solid map-get(vars.$borders, dividing-line);
+    margin: 1rem 0;
+}
+
+.currentColor {
+    width: 60px;
+    min-height: 60px;
+    height: 60px;
+
+    background-color: map-get(vars.$bg-color, bg-secondary);
+    border-radius: .3rem;
+    box-shadow: 4px 4px 4px #000000;
+}
+
+.containerColors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5em;
+    min-height: 60px;
+    height: clamp(100px, 100%, 300px);
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    margin-top: 1rem;
+
+    .colorBlock {
+        width: 30px;
+        height: 30px;
+        background-color: red;
+        border-radius: .3rem;;
+        cursor: pointer;
+    }
+}
+
+.footer {
+    @include mix.display-flex(space-between, center);
+
+    .containerUploadFile {
+        @include mix.display-flex(stretch, center);
+        gap: .5rem;
+        cursor: pointer;
+    }
+
+    .uploadFileSvg {
+        fill: map-get(vars.$svg-colors, color-accent);
+    }
+
+    .settingsSvg {
+        fill: map-get(vars.$svg-colors, color-primary);
+
+        &:hover {
+            fill: map-get(vars.$svg-colors, color-hover-primary);
+        }
+    }
+}
+
+

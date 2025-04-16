@@ -1,0 +1,43 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as vars;
+
+.container {
+    background-color: map-get(vars.$bg-color, bg-primary);
+    width: clamp(100px, 100%, 500px);
+    border: 1px solid map-get(vars.$borders, contour-primary);
+}
+
+.headerContainer {
+    @include mix.display-flex(space-between, center);
+    border-bottom: 1px solid map-get(vars.$borders, contour-primary);
+    padding: 1rem;
+
+    .closeSvg {
+        stroke: map-get(vars.$svg-colors, color-primary);
+
+        &:hover {
+            stroke: map-get(vars.$svg-colors, color-hover-primary);
+        }
+    }
+}
+
+.sectionSettings {
+    padding: 1rem;
+
+    .controlPanel {
+        @include mix.display-flex(space-between, center);
+        padding: 0 1rem;
+        margin-bottom: 1rem;
+
+        label {
+            padding-right: .5em;
+        }
+    }
+
+    .settingInput {
+        height: 35px;
+        border: 1px solid map-get(vars.$borders, contour-secondary);
+        padding: .5em .8em;
+        border-radius: .3rem;
+    }
+}
