@@ -1,0 +1,6 @@
+@use "../../components/control-panel" as panel;
+@use "../../abstracts/mixins" as mix;
+
+.controlPanel {
+    @include panel.controlPanel();
+}

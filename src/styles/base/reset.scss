@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as vars;
+
+* {
+    font-family: "Roboto", sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+
+    box-sizing: border-box;
+    background-color: transparent;
+    border: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: map-get(vars.$bg-color, bg-primary);
+}
+
+input, select {
+    font-size: 1rem;
+
+    &:focus {
+        outline: none;
+    }
+
+    input[type="checkbox"] {
+        margin: 0;
+        cursor: pointer;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.noSelect {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}

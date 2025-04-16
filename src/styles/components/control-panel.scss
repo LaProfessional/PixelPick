@@ -1,0 +1,47 @@
+@use "../abstracts/mixins" as mix;
+@use "../abstracts/variables" as vars;
+
+@mixin controlPanel() {
+    @include mix.display-flex(space-between, center);
+    height: 35px;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+
+    .labelContainer {
+        width: 100%;
+    }
+
+    .inputContainer {
+        @include mix.display-flex(start, center);
+        gap: .5em;
+        width: 100%;
+    }
+
+    input, select {
+        width: 100%;
+        max-width: 217px;
+        height: 35px;
+        border: 1px solid map-get(vars.$borders, contour-secondary);
+        border-radius: .3rem;
+        padding: .5em .8em;
+        outline: transparent;
+
+        &:focus {
+            transition: outline .2s ease-in-out;
+            outline: 4px solid map-get(vars.$outlines, outline-focus-primary);
+        }
+    }
+
+    select {
+        padding: 0 .5em;
+    }
+
+    option {
+        background-color: map-get(vars.$bg-color, bg-primary);
+    }
+
+    input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+    }
+}

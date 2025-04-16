@@ -1,9 +1,13 @@
-@use "../abstracts/mixins" as mix;
-@use "../abstracts/variables" as vars;
+@use "../../abstracts/mixins" as mix;
+@use "../../abstracts/variables" as vars;
 
 .container {
-    background-color: map-get(vars.$bg-color, bg-primary);
+    display: grid;
+    grid-template-rows: 65px 1fr;
     width: clamp(100px, 100%, 500px);
+    max-height: 90vh;
+
+    background-color: map-get(vars.$bg-color, bg-primary);
     border: 1px solid map-get(vars.$borders, contour-primary);
 }
 
@@ -22,22 +26,11 @@
 }
 
 .sectionSettings {
+    overflow: hidden;
+    overflow-y: auto;
+
     padding: 1rem;
 
-    .controlPanel {
-        @include mix.display-flex(space-between, center);
-        padding: 0 1rem;
-        margin-bottom: 1rem;
-
-        label {
-            padding-right: .5em;
-        }
-    }
-
-    .settingInput {
-        height: 35px;
-        border: 1px solid map-get(vars.$borders, contour-secondary);
-        padding: .5em .8em;
-        border-radius: .3rem;
-    }
+    scrollbar-gutter: stable;
+    scrollbar-width: thin;
 }

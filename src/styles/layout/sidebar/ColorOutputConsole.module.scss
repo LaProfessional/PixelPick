@@ -1,5 +1,5 @@
 @use "../../abstracts/variables" as vars;
-@use "../../abstracts/mixins.css" as mix;
+@use "../../abstracts/mixins" as mix;
 
 .colorOutputConsole {
     @include mix.display-flex(space-between, center);

@@ -1,0 +1,5 @@
+@use "../../components/control-panel" as panel;
+
+.controlPanel {
+    @include panel.controlPanel();
+}
