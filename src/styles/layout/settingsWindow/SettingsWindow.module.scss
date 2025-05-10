@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../abstracts/mixins" as mix;
 @use "../../abstracts/variables" as vars;
 
@@ -7,20 +8,20 @@
     width: clamp(100px, 100%, 500px);
     max-height: 90vh;
 
-    background-color: map-get(vars.$bg-color, bg-primary);
-    border: 1px solid map-get(vars.$borders, contour-primary);
+    background-color: map.get(vars.$bg-color, bg-primary);
+    border: 1px solid map.get(vars.$borders, contour-primary);
 }
 
 .headerContainer {
     @include mix.display-flex(space-between, center);
-    border-bottom: 1px solid map-get(vars.$borders, contour-primary);
+    border-bottom: 1px solid map.get(vars.$borders, contour-primary);
     padding: 1rem;
 
     .closeSvg {
-        stroke: map-get(vars.$svg-colors, color-primary);
+        stroke: map.get(vars.$svg-colors, color-primary);
 
         &:hover {
-            stroke: map-get(vars.$svg-colors, color-hover-primary);
+            stroke: map.get(vars.$svg-colors, color-hover-primary);
         }
     }
 }

@@ -1,23 +1,23 @@
-import React, { useContext } from 'react';
+import React from 'react';
+import useModal from "../hooks/useModal";
 import styles from "../../styles/layout/overlay/Overlay.module.scss";
-
-import { ModalContext } from "../providers/ModalContextProvider";
-
-interface ModalContextType {
-    isModalOpen: boolean;
-    setIsModalOpen: (value: boolean) => void;
-}
 
 interface OverlayProps {
     children: React.ReactNode;
 }
 
-const Overlay: React.FC<OverlayProps> = ({children}) => {
+const Overlay: React.FC<OverlayProps> = ({ children }) => {
+    const { isModalOpen, setIsModalOpen } = useModal();
 
-    const {isModalOpen} = useContext<ModalContextType | undefined>(ModalContext) ?? {};
+    const handleClickOverlay = (e: React.MouseEvent<HTMLDivElement>) => {
+        if (e.target === e.currentTarget) setIsModalOpen(false);
+    };
 
     return (
-        <div className={ `${ styles.overlay } ${ isModalOpen ? styles.active : '' }` }>{ children }</div>
+        <div
+            onClick={ e => handleClickOverlay(e) }
+            className={ `${ styles.overlay } ${ isModalOpen ? styles.active : '' }` }
+        >{ children }</div>
     );
 };
 

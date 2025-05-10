@@ -1,4 +1,5 @@
 import React from 'react';
+import useModal from "../hooks/useModal";
 import styles from "../../styles/layout/sidebar/Sidebar.module.scss";
 
 import { ReactComponent as LogoSvg } from "../../assets/logo.svg";
@@ -9,6 +10,8 @@ import ColorOutputConsole from "./ColorOutputConsole";
 import Button from "./Button";
 
 const Sidebar = () => {
+    const { setIsModalOpen } = useModal();
+
     return (
         <aside className={ styles.sidebar }>
             <header className={ styles.logoContainer }>
@@ -38,7 +41,9 @@ const Sidebar = () => {
                     <UploadFileSvg className={ styles.uploadFileSvg }></UploadFileSvg>
                     <Button type={ "upload" }>Upload Image</Button>
                 </div>
-                <SettingsSvg className={ styles.settingsSvg } ></SettingsSvg>
+                <button onClick={() => setIsModalOpen(true) }>
+                    <SettingsSvg className={ styles.settingsSvg }></SettingsSvg>
+                </button>
             </footer>
         </aside>
     );

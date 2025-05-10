@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../abstracts/mixins" as mix;
 @use "../../abstracts/variables" as vars;
 
@@ -5,7 +6,7 @@
     @include mix.display-flex(stretch, stretch, column);
     width: clamp(100px, 100%, 310px);
     height: 100vh;
-    border-right: 1px solid map-get(vars.$borders, contour-primary);
+    border-right: 1px solid map.get(vars.$borders, contour-primary);
     padding: 1rem;
 }
 
@@ -16,7 +17,7 @@
 
 hr {
     border: none;
-    border-bottom: 1px solid map-get(vars.$borders, dividing-line);
+    border-bottom: 1px solid map.get(vars.$borders, dividing-line);
     margin: 1rem 0;
 }
 
@@ -25,7 +26,7 @@ hr {
     min-height: 60px;
     height: 60px;
 
-    background-color: map-get(vars.$bg-color, bg-secondary);
+    background-color: map.get(vars.$bg-color, bg-secondary);
     border-radius: .3rem;
     box-shadow: 4px 4px 4px #000000;
 }
@@ -61,14 +62,14 @@ hr {
     }
 
     .uploadFileSvg {
-        fill: map-get(vars.$svg-colors, color-accent);
+        fill: map.get(vars.$svg-colors, color-accent);
     }
 
     .settingsSvg {
-        fill: map-get(vars.$svg-colors, color-primary);
+        fill: map.get(vars.$svg-colors, color-primary);
 
         &:hover {
-            fill: map-get(vars.$svg-colors, color-hover-primary);
+            fill: map.get(vars.$svg-colors, color-hover-primary);
         }
     }
 }

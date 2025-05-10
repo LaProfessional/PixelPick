@@ -1,9 +1,5 @@
 import React, { useState, createContext } from 'react';
-
-interface ModalContextType {
-    isModalOpen: boolean;
-    setIsModalOpen: (value: boolean) => void;
-}
+import { ModalContextType } from "../../types/ModalContextType";
 
 export const ModalContext = createContext<ModalContextType | undefined>(undefined);
 
@@ -12,7 +8,7 @@ interface ModalContextProps {
 }
 
 const ModalContextProvider: React.FC<ModalContextProps> = ({children}) => {
-    const [ isModalOpen, setIsModalOpen ] = useState(true);
+    const [ isModalOpen, setIsModalOpen ] = useState(false);
 
     return (
         <ModalContext.Provider value={ {isModalOpen, setIsModalOpen} }>

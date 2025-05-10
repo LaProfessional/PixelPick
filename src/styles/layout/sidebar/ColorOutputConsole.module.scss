@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../../abstracts/variables" as vars;
 @use "../../abstracts/mixins" as mix;
 
@@ -17,10 +18,10 @@
     }
 
     .contentCopySvg {
-        fill: map-get(vars.$svg-colors, color-primary);
+        fill: map.get(vars.$svg-colors, color-primary);
 
         &:hover {
-            fill: map-get(vars.$svg-colors, color-hover-primary);
+            fill: map.get(vars.$svg-colors, color-hover-primary);
         }
     }
 }

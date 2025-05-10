@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../abstracts/mixins" as mix;
 @use "../abstracts/variables" as vars;
 
@@ -21,14 +22,14 @@
         width: 100%;
         max-width: 217px;
         height: 35px;
-        border: 1px solid map-get(vars.$borders, contour-secondary);
+        border: 1px solid map.get(vars.$borders, contour-secondary);
         border-radius: .3rem;
         padding: .5em .8em;
         outline: transparent;
 
         &:focus {
             transition: outline .2s ease-in-out;
-            outline: 4px solid map-get(vars.$outlines, outline-focus-primary);
+            outline: 4px solid map.get(vars.$outlines, outline-focus-primary);
         }
     }
 
@@ -37,7 +38,7 @@
     }
 
     option {
-        background-color: map-get(vars.$bg-color, bg-primary);
+        background-color: map.get(vars.$bg-color, bg-primary);
     }
 
     input[type="checkbox"] {

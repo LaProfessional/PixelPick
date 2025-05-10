@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../abstracts/variables" as vars;
 
 * {
@@ -14,7 +15,7 @@
 }
 
 body {
-    background-color: map-get(vars.$bg-color, bg-primary);
+    background-color: map.get(vars.$bg-color, bg-primary);
 }
 
 input, select {
